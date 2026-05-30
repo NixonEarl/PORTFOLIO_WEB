@@ -56,4 +56,15 @@ export const projects: Project[] = [
     stack: ['C#', 'Unity'],
     screenshots: { label: 'More screenshots', href: 'https://example.com/gora-na-explorer-screenshots' },
   },
+   {
+    title: 'Pious Petcare Landing Page',
+    coreSystemDescription:
+      'A pet care landing page built to streamline the appointment scheduling process for a veterinary clinic. It provides pet owners with quick, direct access to medical services, product offerings, and clinic details.',
+    image: {
+      src: '/project-pious.png',
+      alt: 'Gora na Explorer Wild Clash game title screen with play settings and exit buttons',
+    },
+    stack: ['HTML', 'CSS', 'Javascript'],
+    screenshots: { label: 'More screenshots', href: 'https://example.com/gora-na-explorer-screenshots' },
+  },
 ];
