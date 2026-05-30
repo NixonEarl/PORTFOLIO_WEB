@@ -82,7 +82,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
             className="mt-8 text-lg leading-8 text-zinc-400 sm:text-xl sm:leading-9"
           >
-            I translate heavy technical complexity into clean, simple, and intuitive digital products. Blending web and mobile development, I turn dense backend data and chaotic workflows into fast, seamless interfaces that feel effortless to use.
+          I build easy-to-use web and mobile applications that make complicated tasks straightforward. My goal is to simplify complex everyday systems into clear, fast steps that anyone can navigate with ease..
           </motion.p>
 
           <motion.div
