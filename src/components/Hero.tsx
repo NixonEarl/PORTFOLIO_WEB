@@ -1,4 +1,5 @@
-import { ArrowRight, ExternalLink, FileText, Github, Linkedin } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, ExternalLink, FileText, Github, Linkedin, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const externalLinks = [
@@ -7,6 +8,24 @@ const externalLinks = [
 ];
 
 export function Hero() {
+  const [showCVModal, setShowCVModal] = useState(false);
+
+  useEffect(() => {
+    if (!showCVModal) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowCVModal(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showCVModal]);
+
   return (
     <section className="relative border-b border-zinc-800 overflow-hidden">
       {/* Animated background elements */}
@@ -79,13 +98,13 @@ export function Hero() {
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
             </a>
-            <a
-              href="/resume.pdf"
-              className="group inline-flex items-center justify-center gap-2 border border-zinc-800 px-5 py-3 text-sm font-semibold text-zinc-100 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-400/50 hover:shadow-emerald-line"
+            <button
+              onClick={() => setShowCVModal(true)}
+              className="group inline-flex items-center justify-center gap-2 border border-zinc-800 px-5 py-3 text-sm font-semibold text-zinc-100 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-400/50 hover:shadow-emerald-line hover:bg-zinc-900/30 cursor-pointer"
             >
               <FileText className="h-4 w-4" />
               CV
-            </a>
+            </button>
             <div className="flex items-center gap-5 pt-2 sm:pl-3 sm:pt-0">
               {externalLinks.map((link) => {
                 const Icon = link.icon;
@@ -108,6 +127,48 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      {showCVModal ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/90 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label="CV preview"
+          onClick={() => setShowCVModal(false)}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="relative w-full max-w-4xl border border-zinc-800 bg-zinc-950 rounded-lg overflow-hidden shadow-[0_24px_90px_rgba(0,0,0,0.65)]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-zinc-800 px-4 sm:px-6 py-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-400">Curriculum Vitae</p>
+                <h3 className="mt-2 text-lg font-bold text-zinc-100">Nixon Estrella</h3>
+              </div>
+              <motion.button
+                type="button"
+                onClick={() => setShowCVModal(false)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex h-10 w-10 items-center justify-center border border-zinc-800 rounded text-zinc-400 transition-all duration-300 ease-out hover:border-emerald-400/50 hover:text-emerald-400"
+                aria-label="Close CV preview"
+              >
+                <X className="h-5 w-5" />
+              </motion.button>
+            </div>
+            <div className="max-h-[80vh] overflow-auto bg-gradient-to-br from-zinc-900/30 to-zinc-950 p-3 sm:p-6">
+              <img
+                src="/Nixon-CV.png"
+                alt="CV - Nixon Estrella"
+                className="mx-auto max-h-[75vh] w-auto max-w-full object-contain rounded"
+              />
+            </div>
+          </motion.div>
+        </div>
+      ) : null}
     </section>
   );
 }
