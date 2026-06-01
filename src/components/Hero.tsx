@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             className="text-sm font-medium uppercase tracking-[0.28em] text-emerald-400"
           >
-            WEB DEV • MOBILE DEV • GAME DESIGN
+            WEB DEV • MOBILE DEV • SOFTWARE TESTER • GAME DESIGN
           </motion.p>
 
           <motion.div
