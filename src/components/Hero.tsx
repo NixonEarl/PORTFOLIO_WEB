@@ -161,7 +161,7 @@ export function Hero() {
             </div>
             <div className="max-h-[80vh] overflow-auto bg-gradient-to-br from-zinc-900/30 to-zinc-950 p-3 sm:p-6">
               <img
-                src="/Nixon-CV.png"
+                src="/nixonresumecv.pdf"
                 alt="CV - Nixon Estrella"
                 className="mx-auto max-h-[75vh] w-auto max-w-full object-contain rounded"
               />
