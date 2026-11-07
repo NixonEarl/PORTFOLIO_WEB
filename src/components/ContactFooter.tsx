@@ -42,7 +42,7 @@ export function ContactFooter() {
       </motion.div>
 
       <div className="mx-auto mt-20 flex max-w-7xl flex-col gap-3 border-t border-zinc-800 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Nixon Estrella. Built with React, TypeScript, and Tailwind CSS.</p>
+        <p>© 2026 Nixon Estrella. All rights reserved.</p>
         <a
           href="#top"
           className="group inline-flex w-fit items-center gap-2 border border-zinc-800 px-3.5 py-2 text-xs font-semibold text-zinc-400 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-400/50 hover:text-emerald-400 hover:shadow-emerald-line"
