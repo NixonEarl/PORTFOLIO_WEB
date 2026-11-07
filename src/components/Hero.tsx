@@ -159,11 +159,11 @@ export function Hero() {
                 <X className="h-5 w-5" />
               </motion.button>
             </div>
-            <div className="max-h-[80vh] overflow-auto bg-gradient-to-br from-zinc-900/30 to-zinc-950 p-3 sm:p-6">
-              <img
-                src="/nixonresumecv.png"
-                alt="CV - Nixon Estrella"
-                className="mx-auto max-h-[75vh] w-auto max-w-full object-contain rounded"
+            <div className="bg-gradient-to-br from-zinc-900/30 to-zinc-950 p-3 sm:p-6">
+              <iframe
+                src="/newcv.pdf"
+                title="CV - Nixon Estrella"
+                className="h-[75vh] w-full rounded border-0 bg-white"
               />
             </div>
           </motion.div>
