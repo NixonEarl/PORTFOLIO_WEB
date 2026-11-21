@@ -20,7 +20,7 @@ export function VideoSection() {
           <div className="mt-12 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/40 transition-colors duration-300 ease-out hover:border-emerald-400/50">
             <div className="aspect-video w-full">
               <iframe
-                src="https://www.youtube.com/embed/WY-V4xDjCtA"
+                src="https://www.youtube.com/embed/69NOwcCg_YI"
                 title="Demo Reel video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
